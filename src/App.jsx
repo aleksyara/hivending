@@ -1,45 +1,20 @@
-import React, { useEffect } from 'react';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import OrangeCounty from './pages/OrangeCounty';
+import LosAngeles from './pages/LosAngeles';
+import RiversideCounty from './pages/RiversideCounty';
 
 function App() {
-  useEffect(() => {
-    // Smooth scrolling for navigation links
-    const handleClick = (e) => {
-      const target = e.target;
-      if (target.hash) {
-        e.preventDefault();
-        const element = document.querySelector(target.hash);
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    };
-
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Services />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/vending-machines-orange-county" element={<OrangeCounty />} />
+        <Route path="/vending-machines-los-angeles" element={<LosAngeles />} />
+        <Route path="/vending-machines-riverside-county" element={<RiversideCounty />} />
+      </Routes>
+    </Router>
   );
 }
 

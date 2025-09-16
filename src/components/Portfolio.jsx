@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Zap, Wifi, Shield, Thermometer, CreditCard, Eye, Snowflake, Package, ArrowRight } from 'lucide-react';
 import Modal from './Modal';
-import InquiryForm from './InquiryForm';
+import ContactForm from './ContactForm';
 
 const Portfolio = () => {
   const [selectedMachine, setSelectedMachine] = useState(0);
@@ -108,8 +108,11 @@ const Portfolio = () => {
                 <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden">
                   <img
                     src={currentMachine.images[currentImageKey]}
-                    alt={currentMachine.title}
+                    alt={`${currentMachine.title} - AI-powered vending machine with smart inventory and cashless payment system`}
                     className="w-full h-full object-cover transition-all duration-500"
+                    loading="lazy"
+                    width="600"
+                    height="600"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -128,8 +131,11 @@ const Portfolio = () => {
                     >
                       <img
                         src={currentMachine.images[key]}
-                        alt={`${currentMachine.title} - ${key}`}
+                        alt={`${currentMachine.title} - ${key} view of smart vending machine`}
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        width="64"
+                        height="64"
                       />
                     </button>
                   ))}
@@ -206,7 +212,12 @@ const Portfolio = () => {
                   <ArrowRight size={18} />
                 </button>
                 <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                  <InquiryForm onClose={() => setIsModalOpen(false)} />
+                  <ContactForm 
+                    title="Get Started with Hungry Ivan Vending"
+                    description="Fill out this form and we'll get back to you with a customized vending solution."
+                    onClose={() => setIsModalOpen(false)}
+                    compact={true}
+                  />
                 </Modal>
 
               </div>
