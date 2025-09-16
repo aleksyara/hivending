@@ -37,9 +37,16 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <span className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-              Hungry Ivan Vending
-            </span>
+            <a href="/" className="flex items-center space-x-3">
+              <img 
+                src="/hungry-ivan-logo.svg" 
+                alt="Hungry Ivan Vending" 
+                className="h-10 w-10"
+              />
+              <span className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+                Hungry Ivan Vending
+              </span>
+            </a>
           </div>
 
           {/* Desktop Navigation */}

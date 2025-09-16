@@ -11,7 +11,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-4 space-x-3">
+              <img 
+                src="/hungry-ivan-logo.svg" 
+                alt="Hungry Ivan Vending" 
+                className="h-8 w-8"
+              />
               <span className="text-xl font-bold">Hungry Ivan Vending</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
