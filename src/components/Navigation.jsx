@@ -35,15 +35,15 @@ const Navigation = () => {
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2">
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-3">
               <img 
-                src="/hungry-ivan-logo.svg" 
-                alt="Hungry Ivan Vending" 
-                className="h-10 w-10"
+                src="/HIVlogo.jpg" 
+                alt="Hungry Ivan Vending Company Logo" 
+                className="h-16 w-16 object-contain"
               />
-              <span className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+              <span className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'} hidden sm:block`}>
                 Hungry Ivan Vending
               </span>
             </a>
@@ -113,10 +113,10 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`focus:outline-none ${
+              className={`focus:outline-none p-2 ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-orange-600' 
                   : 'text-white hover:text-orange-300'
