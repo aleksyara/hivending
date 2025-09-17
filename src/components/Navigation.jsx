@@ -109,14 +109,6 @@ const Navigation = () => {
                   </div>
                 )}
               </div>
-              
-              {/* Sticky CTA Button */}
-              <a
-                href="#contact"
-                className="bg-orange-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-orange-700 transition-colors duration-200"
-              >
-                Get a Free Machine
-              </a>
             </div>
           </div>
 
@@ -164,17 +156,6 @@ const Navigation = () => {
                   {area.name}
                 </a>
               ))}
-            </div>
-            
-            {/* Mobile CTA */}
-            <div className="border-t border-gray-200 pt-2 mt-2">
-              <a
-                href="#contact"
-                className="bg-orange-600 text-white block mx-3 px-4 py-2 rounded-lg font-medium text-center hover:bg-orange-700 transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Get a Free Machine
-              </a>
             </div>
           </div>
         </div>
