@@ -15,7 +15,7 @@ const Footer = () => {
               <img 
                 src="/HIVlogo.jpg" 
                 alt="Hungry Ivan Vending" 
-                className="h-8 w-8"
+                className="h-12 w-12 object-contain"
               />
               <span className="text-xl font-bold">Hungry Ivan Vending</span>
             </div>

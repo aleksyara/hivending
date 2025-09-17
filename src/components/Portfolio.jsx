@@ -13,7 +13,7 @@ const Portfolio = () => {
       title: 'AI Powered Smart Combo Vending Machine',
       category: 'Premium AI Series',
       images: {
-        wood: '/NaturalWoodPremiumWrap.webp',
+        wood: '/HIVend.jpg',
         purple: '/genius_vend_at_voodoo_cellar_boise_angled_left copy copy.webp',
         payment: '/Genius_Vend_Swiping_Card.webp'
       },

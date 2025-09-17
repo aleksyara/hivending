@@ -41,7 +41,7 @@ const Navigation = () => {
               <img 
                 src="/HIVlogo.jpg" 
                 alt="Hungry Ivan Vending Company Logo" 
-                className="h-16 w-16 object-contain"
+                className="h-20 w-20 object-contain"
               />
               <span className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'} hidden sm:block`}>
                 Hungry Ivan Vending
