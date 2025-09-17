@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4 space-x-3">
               <img 
-                src="/hungry-ivan-logo.svg" 
+                src="/HIVlogo.jpg" 
                 alt="Hungry Ivan Vending" 
                 className="h-8 w-8"
               />

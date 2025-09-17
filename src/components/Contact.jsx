@@ -19,7 +19,7 @@ const Contact = () => {
           <div className="mt-8 flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span>500+ Installations</span>
+              <span>Timely Restocking Service</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
