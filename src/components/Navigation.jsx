@@ -35,17 +35,25 @@ const Navigation = () => {
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-2">
-          <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-3">
+        <div className="flex justify-between items-center py-1">
+          <div className="flex items-center space-x-4">
+            <a href="/" className="flex items-center">
               <img 
                 src="/HIVlogo.jpg" 
                 alt="Hungry Ivan Vending Company Logo" 
-                className="h-20 w-20 object-contain"
+                className="h-24 w-24 object-contain"
               />
-              <span className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'} hidden sm:block`}>
-                Hungry Ivan Vending
-              </span>
+            </a>
+            <a 
+              href="#about"
+              className={`text-xl font-bold transition-colors duration-200 relative group hidden sm:block ${
+                isScrolled 
+                  ? 'text-gray-900 hover:text-orange-600' 
+                  : 'text-white hover:text-orange-300'
+              }`}
+            >
+              Hungry Ivan Vending
+              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
             </a>
           </div>
 
@@ -116,13 +124,13 @@ const Navigation = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`focus:outline-none p-2 ${
+              className={`focus:outline-none p-3 rounded-lg transition-colors duration-200 ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-orange-600' 
-                  : 'text-white hover:text-orange-300'
+                  ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' 
+                  : 'text-white hover:text-orange-300 hover:bg-white/10'
               }`}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>

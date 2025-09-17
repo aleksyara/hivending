@@ -30,7 +30,7 @@ const Portfolio = () => {
       title: 'AI Powered Smart Vending Freezer',
       category: 'Freezer AI Series',
       images: {
-        main: '/Genius-Vend-AI-Large-Smart-Cooler_compressed.webp',
+        main: '/NaturalWoodPremiumWrap.webp',
         payment: '/Genius_Vend_Swiping_Card copy.webp',
         custom: '/Genius_Vend_AI_Cooler_with_Angel_Margarita_Wrap.webp'
       },
