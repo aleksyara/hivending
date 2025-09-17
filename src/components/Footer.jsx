@@ -20,7 +20,7 @@ const Footer = () => {
               <span className="text-xl font-bold">Hungry Ivan Vending</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              Revolutionary AI-powered vending solutions that transform workplace refreshment with zero upfront costs, smart technology, and reliable service in Orange County, CA.
+              Revolutionary AI-powered vending solutions that transform workplace refreshment with zero upfront costs, smart technology, and reliable service in the Los Angeles, Orange County, and Riverside County, CA.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors duration-200">

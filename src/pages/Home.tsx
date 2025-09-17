@@ -1,35 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
-import About from '../components/About';
-import Portfolio from '../components/Portfolio';
-import Services from '../components/Services';
-import Testimonials from '../components/Testimonials';
-import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import { seoConfig } from '../seo.config';
 
 const Home: React.FC = () => {
-  useEffect(() => {
-    // Smooth scrolling for navigation links
-    const handleClick = (e: Event) => {
-      const target = e.target as HTMLElement;
-      if (target.getAttribute('href')?.startsWith('#')) {
-        e.preventDefault();
-        const element = document.querySelector(target.getAttribute('href')!);
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    };
-
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, []);
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -69,11 +45,6 @@ const Home: React.FC = () => {
       <div className="min-h-screen">
         <Navigation />
         <Hero />
-        <About />
-        <Portfolio />
-        <Services />
-        <Testimonials />
-        <Contact />
         <Footer />
       </div>
     </>

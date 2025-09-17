@@ -71,11 +71,6 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <button className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            Learn More About Our Services
-          </button>
-        </div>
       </div>
     </section>
   );

@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServiceAreasOpen, setIsServiceAreasOpen] = useState(false);
+  const location = useLocation();
+  
+  // Check if we're on the homepage
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +21,15 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Why Us', href: '#about' },
-    { name: 'Our Machines', href: '#portfolio' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Why Us', href: '/why-us' },
+    { name: 'Our Machines', href: '/our-machines' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact Us', href: '/contact-us' },
+  ];
+
+  const rightNavItems = [
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Survey', href: '/survey' },
   ];
 
   const serviceAreas = [
@@ -30,9 +40,11 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
+      !isHomePage 
         ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
-        : 'bg-transparent'
+        : isScrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
+          : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-1">
@@ -45,9 +57,9 @@ const Navigation = () => {
               />
             </a>
             <a 
-              href="#about"
+              href="/"
               className={`text-xl font-bold transition-colors duration-200 relative group hidden sm:block ${
-                isScrolled 
+                !isHomePage || isScrolled 
                   ? 'text-gray-900 hover:text-orange-600' 
                   : 'text-white hover:text-orange-300'
               }`}
@@ -65,7 +77,7 @@ const Navigation = () => {
                   key={item.name}
                   href={item.href}
                   className={`px-3 py-2 text-sm font-medium transition-colors duration-200 relative group ${
-                    isScrolled 
+                    !isHomePage || isScrolled 
                       ? 'text-gray-700 hover:text-orange-600' 
                       : 'text-white hover:text-orange-300'
                   }`}
@@ -81,12 +93,12 @@ const Navigation = () => {
                   onMouseEnter={() => setIsServiceAreasOpen(true)}
                   onMouseLeave={() => setIsServiceAreasOpen(false)}
                   className={`px-3 py-2 text-sm font-medium transition-colors duration-200 relative group flex items-center ${
-                    isScrolled 
+                    !isHomePage || isScrolled 
                       ? 'text-gray-700 hover:text-orange-600' 
                       : 'text-white hover:text-orange-300'
                   }`}
                 >
-                  Service Areas
+                  Locations
                   <ChevronDown size={16} className="ml-1" />
                   <span className="absolute inset-x-0 bottom-0 h-0.5 bg-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
                 </button>
@@ -109,6 +121,22 @@ const Navigation = () => {
                   </div>
                 )}
               </div>
+              
+              {/* Right Navigation Items */}
+              {rightNavItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 relative group ${
+                    !isHomePage || isScrolled 
+                      ? 'text-gray-700 hover:text-orange-600' 
+                      : 'text-white hover:text-orange-300'
+                  }`}
+                >
+                  {item.name}
+                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                </a>
+              ))}
             </div>
           </div>
 
@@ -117,7 +145,7 @@ const Navigation = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`focus:outline-none p-3 rounded-lg transition-colors duration-200 ${
-                isScrolled 
+                !isHomePage || isScrolled 
                   ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-50' 
                   : 'text-white hover:text-orange-300 hover:bg-white/10'
               }`}
@@ -145,7 +173,7 @@ const Navigation = () => {
             
             {/* Mobile Service Areas */}
             <div className="border-t border-gray-200 pt-2 mt-2">
-              <div className="text-gray-500 px-3 py-2 text-sm font-medium">Service Areas</div>
+              <div className="text-gray-500 px-3 py-2 text-sm font-medium">Locations</div>
               {serviceAreas.map((area) => (
                 <a
                   key={area.name}
@@ -154,6 +182,20 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                 >
                   {area.name}
+                </a>
+              ))}
+            </div>
+            
+            {/* Mobile Right Navigation Items */}
+            <div className="border-t border-gray-200 pt-2 mt-2">
+              {rightNavItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-medium transition-colors duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
                 </a>
               ))}
             </div>
