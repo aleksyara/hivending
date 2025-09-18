@@ -139,7 +139,7 @@ const Portfolio = () => {
                 </div>
 
                 {/* Action Icons */}
-                <div className="absolute top-4 right-4 flex space-x-2">
+                {/* <div className="absolute top-4 right-4 flex space-x-2">
                   <div className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-200">
                     <Wifi size={18} className="text-gray-800" />
                   </div>
@@ -149,7 +149,7 @@ const Portfolio = () => {
                   <button className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-200">
                     <ExternalLink size={18} className="text-gray-800" />
                   </button>
-                </div>
+                </div> */}
               </div>
 
               {/* Content Section */}

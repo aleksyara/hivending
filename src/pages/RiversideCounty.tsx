@@ -80,7 +80,7 @@ const RiversideCounty = () => {
                 AI-Powered Vending Machines in Riverside County
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-                Hungry Ivan serves Riverside County with state-of-the-art vending solutions. From the Inland Empire to the Coachella Valley, we bring healthy snacks, fresh beverages, and cutting-edge technology to businesses across the region.
+                Hungry Ivan serves Riverside County with state-of-the-art vending solutions. We bring healthy snacks, fresh beverages, and cutting-edge technology to businesses across the region.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -108,7 +108,7 @@ const RiversideCounty = () => {
                 Why Choose Hungry Ivan in Riverside County?
               </h2>
               <p className="text-xl text-gray-600">
-                Reliable vending solutions for the Inland Empire
+                Reliable vending solutions for your business
               </p>
             </div>
             
@@ -158,7 +158,7 @@ const RiversideCounty = () => {
               Ready to Get Started in Riverside County?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Join businesses across the Inland Empire already enjoying our vending services
+            Join the businesses in Riverside County that are already enjoying our vending services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
