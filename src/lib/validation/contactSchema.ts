@@ -21,22 +21,10 @@ export const contactSchema = z.object({
   }),
   message: z.string().min(1, 'Message is required').max(500, 'Message is too long'),
   
-  // Conditional field for New Vending Service
-  employees: z.number().int().min(1, 'Must have at least 1 employee').max(50000, 'Max 50,000 employees').optional(),
-  
   // Honeypot field for spam protection
   website: z.string().optional(),
   // Time to submit check (client will populate this)
   submitTime: z.number().optional()
-}).refine((data) => {
-  // Employees field is required when New Vending Service is selected
-  if (data.inquiryType === 'New Vending Service') {
-    return data.employees !== undefined && data.employees > 0;
-  }
-  return true;
-}, {
-  message: 'Number of employees is required for New Vending Service',
-  path: ['employees']
 });
 
 export type ContactFormData = z.infer<typeof contactSchema>;

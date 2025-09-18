@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { ExternalLink, Zap, Wifi, Shield, Thermometer, CreditCard, Eye, Snowflake, Package, ArrowRight } from 'lucide-react';
-import Modal from './Modal';
-import ContactForm from './ContactForm';
 
 const Portfolio = () => {
   const [selectedMachine, setSelectedMachine] = useState(0);
   const [selectedImage, setSelectedImage] = useState('main');
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const machines = [
     {
@@ -204,21 +201,13 @@ const Portfolio = () => {
                 {/* <button className="w-full bg-orange-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-orange-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                   Request Machine Demo
                 </button> */}
-                <button
-                  onClick={() => setIsModalOpen(true)}
+                <a
+                  href="/contact-us"
                   className="w-full bg-orange-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-orange-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   Request Machine Demo
                   <ArrowRight size={18} />
-                </button>
-                <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                  <ContactForm 
-                    title="Get Started with Hungry Ivan Vending"
-                    description="Fill out this form and we'll get back to you with a customized vending solution."
-                    onClose={() => setIsModalOpen(false)}
-                    compact={true}
-                  />
-                </Modal>
+                </a>
 
               </div>
             </div>

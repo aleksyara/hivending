@@ -55,7 +55,6 @@ const ContactForm = ({
       phone: '',
       inquiryType: 'New Vending Service',
       message: '',
-      employees: undefined,
       website: '', // Honeypot field
     }
   });
@@ -382,38 +381,6 @@ const ContactForm = ({
           )}
         </div>
 
-        {/* Conditional Employees Field - Only show for New Vending Service */}
-        {inquiryType === 'New Vending Service' && (
-          <div>
-            <label htmlFor="employees" className="block text-sm font-medium text-gray-700 mb-2">
-              How many employees? *
-            </label>
-            <input
-              {...register('employees', { 
-                valueAsNumber: true,
-                setValueAs: (v) => v === '' ? undefined : Number(v)
-              })}
-              type="number"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              id="employees"
-              min="1"
-              max="50000"
-              step="1"
-              className={`w-full ${inputPadding} border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors duration-200 ${
-                errors.employees ? 'border-red-300 focus:ring-red-500' : 'border-gray-300'
-              }`}
-              placeholder="e.g. 25"
-              aria-invalid={errors.employees ? 'true' : 'false'}
-              aria-describedby={errors.employees ? 'employees-error' : undefined}
-            />
-            {errors.employees && (
-              <p id="employees-error" className="mt-1 text-sm text-red-600">
-                {errors.employees.message}
-              </p>
-            )}
-          </div>
-        )}
 
         {/* Submit Button */}
         <button
