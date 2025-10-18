@@ -32,12 +32,7 @@ function validateContactData(data: any) {
     errors.push('Message is required');
   }
   
-  // Check employees field for New Vending Service
-  if (data.inquiryType === 'New Vending Service') {
-    if (!data.employees || typeof data.employees !== 'number' || data.employees < 1) {
-      errors.push('Number of employees is required for New Vending Service');
-    }
-  }
+  // Employees field has been removed from the form
   
   // Check honeypot
   if (data.website && data.website.trim() !== '') {
@@ -100,8 +95,7 @@ export default async function handler(req: any, res: any) {
       email: data.email,
       phone: data.phone,
       inquiryType: data.inquiryType,
-      message: data.message,
-      employees: data.employees
+      message: data.message
     };
 
     // Email configuration
@@ -166,12 +160,6 @@ export default async function handler(req: any, res: any) {
         <div class="value">${normalizedData.inquiryType}</div>
       </div>
       
-      ${normalizedData.employees ? `
-      <div class="field">
-        <div class="label">Number of Employees:</div>
-        <div class="value">${normalizedData.employees}</div>
-      </div>
-      ` : ''}
       
       ${normalizedData.message ? `
       <div class="field">
@@ -204,7 +192,6 @@ City: ${normalizedData.city}
 Email: ${normalizedData.email}
 Phone: ${normalizedData.phone}
 Inquiry Type: ${normalizedData.inquiryType}
-${normalizedData.employees ? `Number of Employees: ${normalizedData.employees}` : ''}
 
 Message:
 ${normalizedData.message}
