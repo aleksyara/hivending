@@ -5,6 +5,7 @@ import InputMask from 'react-input-mask';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { contactSchema, type ContactFormData } from '../lib/validation/contactSchema';
 import { isPhoneComplete } from '../lib/phone';
+import { trackContactFormSubmission } from '../lib/analytics';
 
 interface ContactFormProps {
   /** Optional callback when form is successfully submitted */
@@ -109,6 +110,9 @@ const ContactForm = ({
         setSubmitStatus('success');
         reset();
         onSuccess?.();
+        
+        // Track successful form submission
+        trackContactFormSubmission(data.inquiryType);
         
         // Auto-close modal after success if onClose is provided
         if (onClose) {

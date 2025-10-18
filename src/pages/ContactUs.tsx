@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import { seoConfig } from '../seo.config';
+import { trackContactPageVisit } from '../lib/analytics';
 
 const ContactUs: React.FC = () => {
+  // Track contact page visit
+  useEffect(() => {
+    trackContactPageVisit();
+  }, []);
+
   return (
     <>
       <SEO
